@@ -3,20 +3,23 @@
   
 <div class="container">
   <h1>{{message}}</h1>
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 42rem;">
     <div class="card-body">
       <form action="/meeps/" method="POST">
-        <label for="body">Meep® something:</label>
-        <input type="text" id="body" name="body"><br><br>
-        <input type="submit" value="Post">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Meep® something</label>
+          <input type="text" class="form-control" id="body" name="body" placeholder="Meep...">
+        </div>
+        <input type="submit" class="btn btn-primary mb-3" value="Post">
       </form>
     </div>
   </div>
   <div class="cards"> 
   {% for item in items %}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 42rem;">
     <div class="card-body">
       <h5 class="card-title">Anonymous user</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{item.updated_at}}</h6>
       <p class="card-text">{{item.body}}</p>
       <form action="/videos/{{item.id}}/delete/" method="GET">
         <input type="submit" value="DELETE" class="btn btn-danger">
