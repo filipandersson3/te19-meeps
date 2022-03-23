@@ -3,6 +3,7 @@
   
 <div class="container">
   <h1>{{message}}</h1>
+  <div class="cards d-flex flex-wrap justify-content-center">
   <div class="card" style="width: 42rem;">
     <div class="card-body">
       <form action="/meeps/" method="POST">
@@ -13,17 +14,21 @@
         <input type="submit" class="btn btn-primary mb-3" value="Post">
       </form>
     </div>
-  </div>
-  <div class="cards"> 
+  </div> 
   {% for item in items %}
   <div class="card" style="width: 42rem;">
     <div class="card-body">
       <h5 class="card-title">Anonymous user</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{item.updated_at}}</h6>
       <p class="card-text">{{item.body}}</p>
-      <form action="/videos/{{item.id}}/delete/" method="GET">
+      <div class="d-flex">
+      <form action="/meeps/{{item.id}}" method="GET">
+        <input type="submit" value="Edit" class="btn btn-primary mr-auto">
+      </form>
+      <form action="/meeps/{{item.id}}/delete/" method="GET">
         <input type="submit" value="DELETE" class="btn btn-danger">
       </form>
+      </div>
     </div>
   </div>
   {% endfor %}
