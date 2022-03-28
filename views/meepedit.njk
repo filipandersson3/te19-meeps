@@ -12,6 +12,7 @@
       <form action="/meeps/{{item.id}}" method="POST">
         <div class="mb-3">
           <input type="text" class="form-control" id="body" name="body" value="{{item.body}}" placeholder="Edit meep...">
+          <label for="exampleFormControlInput1" class="form-label" id="char-count">0/140</label>
         </div>
         <input type="submit" class="btn btn-primary mb-3" value="Update">
       </form>
@@ -24,4 +25,7 @@
   </div>
     
 </div>
+
+<script src="/javascripts/charcount.js"></script>
+
 {% endblock %}
