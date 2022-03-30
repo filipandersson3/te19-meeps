@@ -11,8 +11,8 @@
       <h6 class="card-subtitle mb-2 text-muted">{{item.updated_at}}</h6>
       <form action="/meeps/{{item.id}}" method="POST">
         <div class="mb-3">
-          <input type="text" class="form-control" id="body" name="body" value="{{item.body}}" placeholder="Edit meep...">
-          <label for="exampleFormControlInput1" class="form-label" id="char-count">0/140</label>
+          <input type="text" class="form-control" id="body" name="body" value="{{item.body}}" placeholder="Edit meep..." autocomplete="off">
+          <label for="exampleFormControlInput1" class="form-label" id="char-count"></label>
         </div>
         <input type="submit" class="btn btn-primary mb-3" value="Update">
       </form>

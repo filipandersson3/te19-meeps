@@ -9,8 +9,8 @@
       <form action="/meeps/" method="POST">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Meep® something</label>
-          <input type="text" class="form-control" id="body" name="body" placeholder="Meep...">
-          <label for="exampleFormControlInput1" class="form-label" id="char-count">0/140</label>
+          <input type="text" class="form-control" id="body" name="body" placeholder="Meep..." autocomplete="off">
+          <label for="exampleFormControlInput1" class="form-label" id="char-count"></label>
         </div>
         <input type="submit" class="btn btn-primary mb-3" value="Post">
       </form>
@@ -25,9 +25,6 @@
       <div class="d-flex">
       <form action="/meeps/{{item.id}}" method="GET">
         <input type="submit" value="Edit" class="btn btn-primary mr-auto">
-      </form>
-      <form action="/meeps/{{item.id}}/delete/" method="GET">
-        <input type="submit" value="DELETE" class="btn btn-danger">
       </form>
       </div>
     </div>
