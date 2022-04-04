@@ -4,3 +4,12 @@ a {
 h1 {
   color: #383838;
 }
+
+@keyframes fadeout {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeout {
+  animation: fadeout ease 1s forwards;
+}

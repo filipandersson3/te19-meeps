@@ -1,8 +1,8 @@
 {% extends  layout %}
 {% block  content %}
-  
+
+{% include 'components/navbar.njk' %}
 <div class="container">
-  <h1>{{message}}</h1>
   <div class="cards d-flex flex-wrap justify-content-center">
   {% for item in items %}
   <div class="card" style="width: 42rem;">
