@@ -63,7 +63,7 @@ router.get('/:id/delete/', async (req, res, next) => {
         res.redirect('/meeps/');
     } else {
         await pool.promise()
-            .query('DELETE FROM meeps WHERE id = ?', [id])
+            .query('DELETE FROM fipann_meeps WHERE id = ?', [id])
             .then((response) => {
                 console.log(response);
                 if (response[0].affectedRows === 1) {
