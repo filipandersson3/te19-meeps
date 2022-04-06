@@ -5,6 +5,8 @@ const pool = require('../database');
 router.get('/', async function(req, res, next) {
     const flash = req.session.flash;
     const flashColor = req.session.flashColor;
+    req.session.flash = "";
+    req.session.flashColor = "";
     console.log(flash);
     await pool.promise()
         .query('SELECT * FROM meeps ORDER BY updated_at DESC')
