@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
     req.session.flashColor = "";
     console.log(flash);
     await pool.promise()
-        .query('SELECT * FROM meeps ORDER BY updated_at DESC')
+        .query('SELECT * FROM fipann_meeps ORDER BY updated_at DESC')
         .then(([rows, fields]) => {
             console.log(rows);
             let data = {
@@ -35,7 +35,7 @@ router.get('/', async function(req, res, next) {
 router.post('/', async (req, res, next) => {
     const body = req.body.body;
     await pool.promise()
-    .query('INSERT INTO meeps (body) VALUES (?)', [body])
+    .query('INSERT INTO fipann_meeps (body) VALUES (?)', [body])
     .then((response) => {
         console.log(response);
         if (response[0].affectedRows === 1) {
@@ -93,7 +93,7 @@ router.get('/:id', async (req, res, next) => {
         res.redirect('/meeps/');
     } else {
         await pool.promise()
-            .query('SELECT * FROM meeps WHERE id = ?', [id])
+            .query('SELECT * FROM fipann_meeps WHERE id = ?', [id])
             .then(([rows, fields]) => {
                 console.log(rows);
                 let data = {
@@ -126,7 +126,7 @@ router.post('/:id', async (req, res, next) => {
         })
     } else {
         await pool.promise()
-        .query('UPDATE meeps SET body = ? WHERE id = ?', [body,id])
+        .query('UPDATE fipann_meeps SET body = ? WHERE id = ?', [body,id])
         .then((response) => {
             console.log(response);
             if (response[0].affectedRows === 1) {
