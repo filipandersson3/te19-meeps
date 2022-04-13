@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const session = require('express-session');
+const cors = require('cors');
 
 require('dotenv').config();
 
@@ -22,7 +23,7 @@ nunjucks.configure('views', {
 });
 
 app.set('view engine', 'njk');
-
+app.use(cors({ origin: process.env.APP_ORIGIN }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
