@@ -10,6 +10,7 @@ require('dotenv').config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const meepsRouter = require('./routes/meeps');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -43,5 +44,6 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/meeps', meepsRouter);
+app.use('/api', apiRouter);
 
 module.exports = app;
